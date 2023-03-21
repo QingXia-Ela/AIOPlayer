@@ -16,6 +16,30 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "app": {
+        "all": true,
+        "hide": true,
+        "show": true
+      },
+      "fs": {
+        "all": true,
+        "scope": [
+          "$APPDATA/databases/*"
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": [
+          "https://monster-siren.hypergryph.com/api/**"
+        ]
       }
     },
     "bundle": {
@@ -36,7 +60,7 @@
       }
     },
     "security": {
-      "csp": null
+      "csp": ""
     },
     "updater": {
       "active": false
