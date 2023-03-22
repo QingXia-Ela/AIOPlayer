@@ -1,24 +1,37 @@
 import { Method } from 'axios'
 import { fetch } from '@tauri-apps/api/http'
 import type { RequestConfig } from 'monster-siren-api/dist/packages/declare/modules'
+import request from 'monster-siren-api/dist/packages/utils/request'
+
+// monster-siren server host
+const BaseUrl = 'http://localhost:3000'
+
+export async function tauriRequest(url: string, method: Method) {
+  return await fetch(url, {
+    // @ts-expect-error: upper case prevent
+    method: method.toUpperCase()
+  })
+}
+
+export async function normalRequest(url: string, method: Method) {
+  const FinalUrl = BaseUrl + url.replaceAll('https://monster-siren.hypergryph.com/api', '')
+  return await request(FinalUrl, {
+    method,
+  })
+}
 
 export default async function (method: Method, url: string, config: RequestConfig = {}) {
   const {
     params,
-    body
   } = config
-  console.log(config);
 
-  let queryStr = '/?'
+  let queryStr = '?'
   if (params) {
     for (const i in params) {
       queryStr += `${i}=${params[i]}&`
     }
     url += queryStr.substring(0, queryStr.length - 1)
   }
-
-  return await fetch(url, {
-    // @ts-expect-error: upper case prevent
-    method: method.toUpperCase()
-  })
+  // @ts-expect-error: tauri api lost in browser
+  return await (window.__TAURI_IPC__ ? tauriRequest(url, method) : normalRequest(url, method, config))
 }

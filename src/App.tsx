@@ -1,12 +1,8 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
-import { appDataDir, dirname } from '@tauri-apps/api/path'
 import { search } from '@/api/search'
 import "./App.scss";
 import { AxiosResponse } from "axios";
-import request from "./utils/request";
-
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -14,7 +10,6 @@ function App() {
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setGreetMsg(await invoke("greet", { name }));
     // await hide()
     alert(JSON.stringify((await search({
       keyword: 'operation pyrite'
