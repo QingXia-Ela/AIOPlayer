@@ -25,7 +25,9 @@
       "fs": {
         "all": true,
         "scope": [
-          "$APPDATA/databases/*"
+          "$APPDATA/*/**",
+          "$APPCONFIG/*/**",
+          "*/**"
         ]
       },
       "path": {
@@ -51,7 +53,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.dfhrfhcfjfjcjfjcf.dev",
+      "identifier": "FakeMonstersirenPlayer",
       "targets": "all",
       "windows": {
         "wix": {
