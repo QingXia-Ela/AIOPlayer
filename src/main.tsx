@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { Provider } from "react-redux";
+import TitleBar from "./window/TitleBar";
 import "./styles.scss";
-import store from "./store";
-
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>
 );
+
+ReactDOM.createRoot(document.getElementById("TitleBar") as HTMLElement).render(
+  <React.StrictMode>
+    <TitleBar />
+  </React.StrictMode>
+)
