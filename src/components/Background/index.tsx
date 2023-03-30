@@ -1,7 +1,8 @@
 import { FunctionComponent, memo } from "react";
-import BackgroundStoreInstance, { BackgroundType, cssBackgroundOptions, imageBackgroundOptions } from "@/store/Background";
+import BackgroundStoreInstance, { BackgroundType, cssBackgroundOptions, imageBackgroundOptions, videoBackgroundOptions } from "@/store/Background";
 import BackgroundCssComponent from "./BackgroundComponents/css";
 import BackgroundImageComponent from "./BackgroundComponents/image"
+import BackgroundVideoomponent from "./BackgroundComponents/video"
 import Styles from './index.module.scss'
 
 interface BackgroundProps {
@@ -17,6 +18,10 @@ const GetBackgroundTypeComponent = (key: BackgroundType) => {
     case "image": {
       const { src, moveWithMouse = false } = BackgroundStoreInstance.options as imageBackgroundOptions
       return <BackgroundImageComponent src={src} moveWithMouse={moveWithMouse} />
+    }
+    case "video": {
+      const { src } = BackgroundStoreInstance.options as videoBackgroundOptions
+      return <BackgroundVideoomponent src={src} />
     }
   }
 }
