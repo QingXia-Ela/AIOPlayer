@@ -14,3 +14,8 @@ exec('vite', (e) => {
 })
 
 server()
+
+exec('react-devtools').stdout.on("data", (ch) => {
+  console.log(ch);
+})
+
