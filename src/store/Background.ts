@@ -1,4 +1,4 @@
-import { makeObservable, observable, action } from "mobx"
+import { observable, action, trace, makeAutoObservable } from "mobx"
 
 export interface cssBackgroundOptions {
   cssContent?: string
@@ -23,26 +23,20 @@ export type BackgroundOptionsType = cssBackgroundOptions | videoBackgroundOption
 
 export type BackgroundType = keyof BackgroundTypeOptionsCollect
 
-class BackgroundStore {
+export class BackgroundStore {
   type: BackgroundType = "css"
   options: BackgroundOptionsType = {}
   maskOpacity = 0
   filterVal = 0
+  duration = 300
 
   constructor() {
-    makeObservable(this, {
-      type: observable,
-      options: observable,
-      maskOpacity: observable,
-      filterVal: observable,
-      toggleType: action,
-      setMaskOpacity: action,
-      setFilterOpacity: action
-    })
+    makeAutoObservable(this)
   }
 
-  toggleType(type: BackgroundType, options: Pick<BackgroundTypeOptionsCollect, typeof type>) {
-    this.options = Object.assign(options)
+  toggleType(type: BackgroundType, options: BackgroundTypeOptionsCollect[typeof type]) {
+    this.type = type
+    this.options = JSON.parse(JSON.stringify(options))
   }
 
   setMaskOpacity(val: number) {

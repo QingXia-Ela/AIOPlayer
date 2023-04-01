@@ -6,7 +6,7 @@ import Styles from './index.module.scss'
 export default memo(
   function BackgroundImageComponent({ src }) {
     return (
-      <div className={Styles.image_bg}>
+      <div className={Styles.video_bg}>
         <video src={src}></video>
       </div>
     );

@@ -1,5 +1,29 @@
+:root {
+  font-family: 'Microsoft Yahei';
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+html {
+  background-color: #191919;
+  overflow: hidden;
+}
+
+.text_nowrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
 }
