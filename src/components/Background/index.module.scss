@@ -5,6 +5,11 @@
   height: 100%;
 }
 
+.transition_container {
+  z-index: -1999;
+  position: relative;
+}
+
 .transition_enter {
   z-index: -1998;
   position: absolute;
@@ -24,5 +29,3 @@
   top: 0;
   left: 0;
 }
-
-.transition_exit_active {}
