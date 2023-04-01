@@ -8,10 +8,13 @@
   box-sizing: border-box;
 }
 
-
 html {
   background-color: #191919;
   overflow: hidden;
+}
+
+#root {
+  position: relative;
 }
 
 .text_nowrap {
