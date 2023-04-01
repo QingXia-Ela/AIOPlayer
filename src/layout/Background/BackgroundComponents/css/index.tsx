@@ -12,7 +12,7 @@ const BackgroundCssComponent: FunctionComponent<cssBackgroundOptions> = memo(
       StyleElement.setAttribute("id", id)
       head?.appendChild(StyleElement)
     }
-    StyleElement.innerHTML = `.${Styles.css_bg} {${cssContent ? cssContent : "background-image: linear-gradient(to left, #12c2e9, #c471ed, #f64f59)"}}`
+    StyleElement.innerHTML = `.${Styles.css_bg} {${cssContent ? cssContent : ""}}`
     return (
       <div className={Styles.css_bg}></div>
     );
