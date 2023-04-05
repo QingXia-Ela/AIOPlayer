@@ -38,7 +38,7 @@ export default observer(({ store = BackgroundStoreInstance }) => {
       <BackgroundMask store={store} />
       <TransitionGroup className={`${Styles.transition_container} w100 h100`}>
         <CSSTransition
-          key={store.type}
+          key={+new Date()}
           timeout={300}
           unmountOnExit
           classNames={{
