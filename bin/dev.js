@@ -15,7 +15,12 @@ exec('vite', (e) => {
 
 server()
 
-exec('react-devtools').stdout.on("data", (ch) => {
+const devProcess = exec('react-devtools')
+
+devProcess.stdout.on("data", (ch) => {
   console.log(ch);
 })
 
+process.on("exit", () => {
+  devProcess.kill()
+})

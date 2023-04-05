@@ -1,4 +1,4 @@
-import { cloneElement, FunctionComponent, memo, useEffect, useState } from "react";
+import { cloneElement, Component, FunctionComponent, memo, MouseEvent as ReactMouseEvent, useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import BackgroundStoreInstance, { BackgroundStore, cssBackgroundOptions, imageBackgroundOptions, videoBackgroundOptions } from "@/store/Background";
 import BackgroundCssComponent from "./BackgroundComponents/css";
