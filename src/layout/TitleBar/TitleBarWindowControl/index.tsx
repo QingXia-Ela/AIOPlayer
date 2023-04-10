@@ -16,6 +16,9 @@ const TitleBarWindowControl: FunctionComponent<TitleBarWindowControlProps> = () 
 
   useEffect(() => {
     if (isTauri()) appWindow.isMaximized().then((v) => setMin(v))
+    appWindow.onResized((e) => {
+      if (isTauri()) appWindow.isMaximized().then((v) => setMin(v))
+    })
   }, [])
 
   function changeWindowSize() {
@@ -28,7 +31,6 @@ const TitleBarWindowControl: FunctionComponent<TitleBarWindowControlProps> = () 
     <div className={Styles.left_control}>
       <Link className={`iconfont icon-24gl-gear ${Styles.iconfont}`} to="/settings"></Link>
       {platfrom === "tauri" ? <>
-
         <i className={`iconfont icon-24gl-minimization ${Styles.iconfont}`} onClick={() => appWindow.minimize()}></i>
         <Suspense>
           <i className={`iconfont icon-24gl-${min ? "minimize" : "square"} ${Styles.iconfont}`} onClick={changeWindowSize}></i>
