@@ -1,8 +1,9 @@
 @import url(./assets/iconfonts/basic/iconfont.css);
+@import url(./styles/fonts.scss);
 
 :root {
   font-size: 50px;
-  font-family: 'Microsoft Yahei';
+  font-family: SourceHanSansCN-Normal, 'Microsoft Yahei';
 }
 
 * {
@@ -12,7 +13,7 @@
 }
 
 html {
-  background-color: #191919;
+  background-color: #000;
 }
 
 #root {

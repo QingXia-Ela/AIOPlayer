@@ -12,7 +12,6 @@ async function _browserSetConfig(o: PlayerConfig) {
 }
 
 async function _tauriGetConfig(): Promise<PlayerConfig> {
-  // await createDir('', _TAURI_CONFIG_OPTIONS_)
   if (!await exists(_TAURI_CONFIG_NAME_, _TAURI_CONFIG_OPTIONS_)) await writeTextFile(_TAURI_CONFIG_NAME_, '{}', _TAURI_CONFIG_OPTIONS_)
   return JSON.parse(await readTextFile(_TAURI_CONFIG_NAME_, _TAURI_CONFIG_OPTIONS_))
 }

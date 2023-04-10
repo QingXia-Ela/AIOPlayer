@@ -56,7 +56,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "FakeMonstersirenPlayer",
+      "identifier": "Monster-siren-Player",
       "targets": "all",
       "windows": {
         "wix": {

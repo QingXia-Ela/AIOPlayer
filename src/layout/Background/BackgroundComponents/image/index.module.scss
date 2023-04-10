@@ -5,9 +5,9 @@
 }
 
 .image_bg__img {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 105%;
+  height: 105%;
   object-fit: cover;
-  background-size: 105vw auto;
-  background-position: center;
+  // background-position: right;
 }
