@@ -1,30 +1,43 @@
 import { useRoutes, RouteObject } from "react-router-dom";
 
 type RouteObjectExtends = RouteObject & {
-  name?: string
+  navInfo?: {
+    name: string,
+    path: string
+  }
 }
 
 const routerList: RouteObjectExtends[] = [
   {
     index: true,
     path: '/',
-    element: <div>index</div>,
+    element: '',
   },
   {
-    name: "我的音乐",
+    navInfo: {
+      name: "我的音乐",
+      path: "/list"
+    },
     path: '/list/:type?/:id?/:page?',
-    element: <div>list/:type/:id/:page</div>
+    element: ""
   },
   {
+    navInfo: {
+      name: "正在播放",
+      path: "/music"
+    },
     path: '/music/:id?',
-    element: <div>music:id</div>
+    element: ""
   },
   {
     path: '/settings',
     element: <div>settings</div>
   },
   {
-    name: "已下载",
+    navInfo: {
+      name: "已下载",
+      path: '/download',
+    },
     path: '/download',
     children: [
       {

@@ -1,0 +1,17 @@
+.navlink {
+  font-family: SourceHanSansCN-Normal;
+  font-size: .34rem;
+  font-weight: 700;
+  color: #fff;
+  opacity: .9;
+  transition: color .3s, opacity .3s, filter .3s;
+
+  &:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 1px);
+  }
+}
+
+.active_navlink {
+  color: #c6c9ce;
+}

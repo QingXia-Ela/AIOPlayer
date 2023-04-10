@@ -2,10 +2,13 @@
   height: 1.2rem;
   user-select: none;
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: .3rem;
+  padding: .7rem .4rem;
+  padding-left: 0.9rem;
+  backdrop-filter: blur(3px);
+  // background-color: #000000;
 }

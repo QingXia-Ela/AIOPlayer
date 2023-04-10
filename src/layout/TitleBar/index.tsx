@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import Styles from './index.module.scss'
 import TitleBarWindowControl from "./TitleBarWindowControl";
+import Nav from './Nav'
 
 interface TitleBarProps {
 
@@ -20,6 +21,7 @@ const TitleBar: FunctionComponent<TitleBarProps> = () => {
   }, [])
   return (
     <div data-tauri-drag-region className={Styles.titlebar}>
+      <Nav></Nav>
       <TitleBarWindowControl></TitleBarWindowControl>
     </div>
   );

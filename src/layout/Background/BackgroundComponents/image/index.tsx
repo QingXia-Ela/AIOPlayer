@@ -8,7 +8,7 @@ const listenMouseMove = throttle((e: MouseEvent, ele: HTMLImageElement | null) =
   const x = (((e.clientX - w) / w) * 0.2).toFixed(2);
   const y = (((e.clientY - h) / h) * 0.2).toFixed(2);
   if (ele) ele.style.transform = `translate(${x}%,${y}%)`;
-}, 16);
+}, 33);
 
 export default memo(
   function BackgroundImageComponent({ src, moveWithMouse }) {
@@ -16,6 +16,7 @@ export default memo(
     useEffect(() => {
       const moveFunc = (e: MouseEvent) => listenMouseMove(e, imgEle.current)
       imgEle.current!.style.left = `-${imgEle.current!.width / 4 - window.innerWidth / 4}px`
+      imgEle.current!.style.top = `-${imgEle.current!.height / 4 - window.innerHeight / 4}px`
       if (moveWithMouse) window.addEventListener('mousemove', moveFunc);
       return () => {
         window.removeEventListener('mousemove', moveFunc)
