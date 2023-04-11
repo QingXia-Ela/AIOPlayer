@@ -1,4 +1,4 @@
-import { observable, action, trace, makeAutoObservable } from "mobx"
+import { makeAutoObservable } from "mobx"
 
 export interface cssBackgroundOptions {
   cssContent?: string

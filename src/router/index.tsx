@@ -1,9 +1,11 @@
-import { useRoutes, RouteObject } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
+import { createBrowserHistory } from 'history'
 
 type RouteObjectExtends = RouteObject & {
   navInfo?: {
-    name: string,
+    name: string
     path: string
+    browser?: boolean
   }
 }
 
@@ -58,9 +60,12 @@ const routerList: RouteObjectExtends[] = [
 
 const asyncRouterList: RouteObject[] = []
 
+const history = createBrowserHistory()
+
 export {
   routerList,
-  asyncRouterList
+  asyncRouterList,
+  history
 }
 
 export default [...routerList, ...asyncRouterList]
