@@ -1,0 +1,27 @@
+.bg_wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  background: #fff;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: wave .8s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes wave {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+
+  to {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}

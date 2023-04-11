@@ -33,7 +33,7 @@ const routerList: RouteObjectExtends[] = [
   },
   {
     path: '/settings',
-    element: <div>settings</div>
+    element: ""
   },
   {
     navInfo: {
