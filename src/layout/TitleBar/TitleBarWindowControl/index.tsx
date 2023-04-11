@@ -15,10 +15,12 @@ const TitleBarWindowControl: FunctionComponent<TitleBarWindowControlProps> = () 
   const platfrom = getPlatform()
 
   useEffect(() => {
-    if (isTauri()) appWindow.isMaximized().then((v) => setMin(v))
-    appWindow.onResized((e) => {
-      if (isTauri()) appWindow.isMaximized().then((v) => setMin(v))
-    })
+    if (isTauri()) {
+      appWindow.isMaximized().then((v) => setMin(v))
+      appWindow.onResized((e) => {
+        appWindow.isMaximized().then((v) => setMin(v))
+      })
+    }
   }, [])
 
   function changeWindowSize() {

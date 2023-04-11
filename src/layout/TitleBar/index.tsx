@@ -4,27 +4,14 @@ import TitleBarWindowControl from "./TitleBarWindowControl";
 import Nav from './Nav'
 
 interface TitleBarProps {
-
+  dropShadow?: number
 }
 
-const TitleBar: FunctionComponent<TitleBarProps> = () => {
-  useEffect(() => {
-    // document
-    //   .getElementById('titlebar-minimize')
-    //   .addEventListener('click', () => appWindow.minimize())
-    // document
-    //   .getElementById('titlebar-maximize')
-    //   .addEventListener('click', () => appWindow.toggleMaximize())
-    // document
-    //   .getElementById('titlebar-close')
-    //   .addEventListener('click', () => appWindow.close())
-  }, [])
-  return (
-    <div data-tauri-drag-region className={Styles.titlebar}>
-      <Nav></Nav>
-      <TitleBarWindowControl></TitleBarWindowControl>
-    </div>
-  );
-}
+const TitleBar: FunctionComponent<TitleBarProps> = ({ dropShadow }) => (
+  <div data-tauri-drag-region className={Styles.titlebar} style={{ backdropFilter: `blur${dropShadow}px` }}>
+    <Nav></Nav>
+    <TitleBarWindowControl></TitleBarWindowControl>
+  </div>
+)
 
 export default TitleBar;
