@@ -36,7 +36,7 @@ export default observer(({ store = BackgroundStoreInstance }) => {
   return (
     <div className={Styles.background}>
       <BackgroundMask store={store} />
-      <TransitionGroup className={`${Styles.transition_container} w100 h100`}>
+      <TransitionGroup className={`${Styles.transition_container} w100 h100`} style={{ filter: `blur(${store.filterVal}px)` }}>
         <CSSTransition
           key={+new Date()}
           timeout={300}

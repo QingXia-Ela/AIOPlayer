@@ -43,7 +43,7 @@ export class BackgroundStore {
     this.maskOpacity = val
   }
 
-  setFilterOpacity(val: number) {
+  setFilterVal(val: number) {
     this.filterVal = val
   }
 }

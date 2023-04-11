@@ -1,5 +1,6 @@
 import { RouteObject } from "react-router-dom";
 import { createBrowserHistory } from 'history'
+import Redirect from "@/components/Rediect";
 
 type RouteObjectExtends = RouteObject & {
   navInfo?: {
@@ -11,9 +12,8 @@ type RouteObjectExtends = RouteObject & {
 
 const routerList: RouteObjectExtends[] = [
   {
-    index: true,
     path: '/',
-    element: '',
+    element: <Redirect to="/list" />
   },
   {
     navInfo: {
