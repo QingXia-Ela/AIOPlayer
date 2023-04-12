@@ -3,7 +3,6 @@ import Styles from './index.module.scss'
 import { appWindow } from '@tauri-apps/api/window'
 import getPlatform from "@/hooks/getPlatform";
 import { Link } from "react-router-dom";
-import BackgroundWave from "@/components/BackgroundWave";
 
 interface TitleBarWindowControlProps {
 
@@ -32,9 +31,7 @@ const TitleBarWindowControl: FunctionComponent<TitleBarWindowControlProps> = () 
 
   return (
     <div className={Styles.left_control}>
-      <BackgroundWave>
-        <Link className={`iconfont icon-24gl-gear ${Styles.iconfont}`} to="/settings"></Link>
-      </BackgroundWave>
+      <Link className={`iconfont icon-24gl-gear ${Styles.iconfont}`} to="/settings"></Link>
       {platfrom === "tauri" ? <>
         <i className={`iconfont icon-24gl-minimization ${Styles.iconfont}`} onClick={() => appWindow.minimize()}></i>
         <Suspense>
