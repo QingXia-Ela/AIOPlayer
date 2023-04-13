@@ -22,7 +22,7 @@ const getSpeicalStyle = (props: NormalListItemProps) => {
 }
 
 const NormalListItem: FunctionComponent<NormalListItemProps> = (p) => (
-  <div className={`${Styles.normal_list_item} ${getSpeicalStyle(p)}`} {...p}></div>
+  <div  {...p} className={`${Styles.normal_list_item} ${getSpeicalStyle(p)}`}></div>
 )
 
 export default NormalListItem;
