@@ -40,7 +40,8 @@
         "all": true,
         "request": true,
         "scope": [
-          "https://monster-siren.hypergryph.com/api/**"
+          "https://monster-siren.hypergryph.com/api/**",
+          "https://web.hycdn.cn/**"
         ]
       },
       "window": {

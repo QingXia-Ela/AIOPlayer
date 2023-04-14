@@ -7,7 +7,7 @@ specifiers:
   '@redux-devtools/extension': ^3.2.5
   '@reduxjs/toolkit': ^1.9.3
   '@tauri-apps/api': ^1.2.0
-  '@tauri-apps/cli': ^1.2.2
+  '@tauri-apps/cli': ^1.2.3
   '@types/lodash': ^4.14.192
   '@types/node': ^18.7.10
   '@types/react': ^18.0.15

@@ -20,6 +20,7 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "react/jsx-no-target-blank": "off",
         "react/prop-types": "off",
-        "@typescript-eslint/no-empty-interface": "warn"
+        "@typescript-eslint/no-empty-interface": "warn",
+        "no-case-declarations": "off"
     },
 };

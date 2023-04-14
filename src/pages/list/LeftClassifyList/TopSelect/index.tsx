@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import { defaultSort, TopSelectItemKey } from "../constant";
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import Styles from './index.module.scss'
 
 /**
@@ -49,22 +48,17 @@ import Styles from './index.module.scss'
 
 interface ListLeftTopSelectProps {
   onChangeSelect?: (e: TopSelectItemKey) => void
+  selectOption: typeof defaultSort
 }
 
-/** cross platform */
-const getTopSelectOption = (): Array<[TopSelectItemKey, string]> => {
-  return JSON.parse(localStorage.getItem("LIST_TOP_SELECT_KEY") ?? JSON.stringify(defaultSort))
-}
-
-const ListLeftTopSelect: FunctionComponent<ListLeftTopSelectProps> = ({ onChangeSelect }) => {
-  const o = getTopSelectOption()
+const ListLeftTopSelect: FunctionComponent<ListLeftTopSelectProps> = ({ onChangeSelect, selectOption: o }) => {
   return (
     <div className={Styles.top_select}>
       <div
         className={Styles.select_wrapper}
       >
         {
-          o.map(([k, v]) => (
+          o.map(({ key: k, value: v }) => (
             <div
               className={`${Styles.select_item}`}
               key={k}
