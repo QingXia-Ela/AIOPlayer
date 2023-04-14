@@ -39,6 +39,7 @@
     "@types/lodash": "^4.14.192",
     "@types/node": "^18.7.10",
     "@types/react": "^18.0.15",
+    "@types/react-beautiful-dnd": "^13.1.4",
     "@types/react-custom-scrollbars": "^4.0.10",
     "@types/react-devtools": "^3.6.0",
     "@types/react-dom": "^18.0.6",

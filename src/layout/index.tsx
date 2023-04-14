@@ -16,13 +16,6 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
       <div className={Styles.layout}>
         {children}
       </div>
-      <div style={{ height: "550px", backgroundColor: "#333", padding: "36px 20px 6px 0" }}>
-        <WhiteZebraScrollbar>
-          11
-          <div style={{ width: "300px", height: "1141px" }}></div>
-          22
-        </WhiteZebraScrollbar>
-      </div>
       <Background></Background>
     </>
   );

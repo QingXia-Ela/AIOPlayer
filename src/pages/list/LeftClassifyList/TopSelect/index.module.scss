@@ -1,0 +1,40 @@
+.top_select {
+  width: 100%;
+  height: 0.8rem;
+}
+
+.select_wrapper {
+  display: flex;
+  font-size: .26rem;
+  justify-content: space-between;
+}
+
+.select_item {
+  font-family: 'Microsoft YaHei';
+  position: relative;
+  opacity: .9;
+  transition: opacity .3s;
+  user-select: none;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.06rem;
+    width: 0;
+    height: .04rem;
+    background-color: #fff;
+    transform: translateX(-50%);
+    transition: width .3s;
+  }
+
+  &.active,
+  &:hover {
+    opacity: 1;
+
+    &::before {
+      width: 50%;
+    }
+  }
+}
