@@ -12,7 +12,7 @@ const getInnerContent = (i: SingleBottomListItemType) => {
   // @ts-expect-error: empty type will get default val
   switch (i.type) {
     case "img":
-      return <img className={Styles.img} src={(i as BottomListImgItemType).src} loading="lazy" />
+      return <img className={Styles.img} src={(i as BottomListImgItemType).src} referrerPolicy="no-referrer" loading="lazy" />
 
     case "icon":
       return <i className={`${Styles.img} ${(i as BottomListIconItemType).iconClass}`} />

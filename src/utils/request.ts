@@ -1,5 +1,5 @@
 import { Method } from 'axios'
-import { fetch } from '@tauri-apps/api/http'
+import { fetch, getClient } from '@tauri-apps/api/http'
 import type { RequestConfig } from 'monster-siren-api/dist/packages/declare/modules'
 import request from 'monster-siren-api/dist/packages/utils/request'
 
@@ -10,10 +10,6 @@ export async function tauriRequest(url: string, method: Method) {
   return await fetch(url, {
     // @ts-expect-error: upper case prevent
     method: method.toUpperCase(),
-    headers: {
-      "accept": "*/*",
-      "referer": "https://web.hycdn.cn/"
-    }
   })
 }
 
@@ -21,10 +17,6 @@ export async function normalRequest(url: string, method: Method) {
   const FinalUrl = BaseUrl + url.replaceAll('https://monster-siren.hypergryph.com/api', '')
   return await request(FinalUrl, {
     method,
-    headers: {
-      "accept": "*/*",
-      "referer": "https://web.hycdn.cn/"
-    }
   })
 }
 
