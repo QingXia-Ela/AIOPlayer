@@ -1,1 +1,9 @@
-.middle_modify {}
+.middle_modify {
+  display: flex;
+  justify-content: space-between;
+  padding: .2rem 0.4rem 0 0;
+}
+
+.iconfont {
+  cursor: pointer;
+}

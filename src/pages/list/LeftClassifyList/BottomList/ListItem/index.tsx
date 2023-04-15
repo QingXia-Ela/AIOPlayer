@@ -35,7 +35,7 @@ const getDescriptionStyle = (t: SingleBottomListItemType) => {
 
 const ListLeftBottomDetailItem: FunctionComponent<ListLeftBottomDetailItemProps> = ({ item, ...p }) => {
   return (
-    <NormalListItem {...p} className={Styles.list_item} selected={item.selected}>
+    <NormalListItem {...p} className={Styles.list_item} selected={item.selected} SmallScaleNum={0.97}>
       {getInnerContent(item)}
       <div className={`${Styles.item_description} ${getDescriptionStyle(item)}`}>
         <div className={`${Styles.title} text_nowrap`}>{item.title}</div>
