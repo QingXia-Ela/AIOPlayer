@@ -2,3 +2,15 @@
   margin-top: .3rem;
   height: calc(100% - 0.8rem);
 }
+
+.empty {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .text {
+    font-size: .3rem;
+  }
+}
