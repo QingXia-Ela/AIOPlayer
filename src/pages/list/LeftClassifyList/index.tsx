@@ -1,4 +1,4 @@
-import { albums } from "monster-siren-api/dist/api";
+import { albums } from "@/api/album";
 import { FunctionComponent, useEffect, useState } from "react";
 import ListLeftBottomDetails from "./BottomList";
 import { defaultSort } from "./constant";
@@ -27,7 +27,7 @@ const LeftClassifyList: FunctionComponent<LeftClassifyListProps> = () => {
   return (
     <div className={Styles.left_classify_list}>
       <ListLeftTopSelect selectOption={defaultSort} />
-      <ListLeftBottomDetails ListData={list} />
+      <ListLeftBottomDetails ListData={list} ScrollbarDegNum={0.75} />
     </div>
   );
 }

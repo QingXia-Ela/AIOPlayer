@@ -14,7 +14,7 @@
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: scale(var(--normal-list-item-scale));
   }
 }
 

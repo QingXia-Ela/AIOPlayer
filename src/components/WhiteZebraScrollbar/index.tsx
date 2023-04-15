@@ -8,6 +8,8 @@ import Styles from './index.module.scss'
 interface WhiteScrollbarProps extends React.PropsWithChildren<React.DetailedHTMLProps<React.HTMLAttributes<Scrollbars>, Scrollbars>> {
   /** 以 rem 作为单位 */
   marginBarHeightLimit?: number
+  /** 最小 0 */
+  ScrollbarDegNum?: number
 }
 
 interface scrollClipPathProps {
@@ -18,9 +20,7 @@ interface scrollClipPathProps {
   clientHeight: number
 }
 
-const ScrollbarDegNum = 0.5
-
-const onBarScroll = (values: positionValues, setFunc: React.Dispatch<React.SetStateAction<scrollClipPathProps>>) => {
+const onBarScroll = (values: positionValues, setFunc: React.Dispatch<React.SetStateAction<scrollClipPathProps>>, ScrollbarDegNum = 0.5) => {
   const { top, clientHeight, scrollHeight } = values
   const scrollbarHeightP = Number((clientHeight / scrollHeight).toFixed(6)) * 100, emptySpace = (100 - scrollbarHeightP) * top
   setFunc({
@@ -34,7 +34,7 @@ const onBarScroll = (values: positionValues, setFunc: React.Dispatch<React.SetSt
 
 const onBarScrollThrottle = throttle(onBarScroll, 50)
 
-const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children, marginBarHeightLimit = 0, ...props }) => {
+const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children, marginBarHeightLimit = 0, ScrollbarDegNum, ...props }) => {
   const [scrollThumbHeightPrecentage, setScrollThumbHeightPrecentage] = React.useState<scrollClipPathProps>({
     lt: -1,
     rt: 1,
@@ -52,7 +52,7 @@ const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children,
     })
   }, [children])
 
-  const { lt, rt, lb, rb, clientHeight } = scrollThumbHeightPrecentage
+  const { lt, rt, lb, rb } = scrollThumbHeightPrecentage
 
   const marginBarHeightStyle = {
     margin: `${marginBarHeightLimit}rem 0`,
@@ -78,8 +78,7 @@ const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children,
           />
         )}
         renderThumbVertical={() => (<div></div>)}
-        onScroll={() => onBarScrollThrottle(ScrollInstance.current!.getValues(), setScrollThumbHeightPrecentage)}
-        onResize={() => onBarScrollThrottle(ScrollInstance.current!.getValues(), setScrollThumbHeightPrecentage)}
+        onScroll={() => onBarScrollThrottle(ScrollInstance.current!.getValues(), setScrollThumbHeightPrecentage, ScrollbarDegNum)}
       >
         {children}
       </Scrollbars>

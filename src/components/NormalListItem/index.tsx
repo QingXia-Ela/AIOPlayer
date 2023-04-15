@@ -6,6 +6,8 @@ interface NormalListItemProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
   selected?: boolean
   disabled?: boolean
   activeOnClick?: boolean
+  /** 默认 0.98 */
+  smallScaleNum?: number
 }
 
 const getSpeicalStyle = (props: NormalListItemProps) => {
@@ -22,7 +24,10 @@ const getSpeicalStyle = (props: NormalListItemProps) => {
 }
 
 const NormalListItem: FunctionComponent<NormalListItemProps> = (p) => (
-  <div {...p} className={`${Styles.normal_list_item} ${getSpeicalStyle(p)} ${p.className ?? ""}`}></div>
+  <div {...p} className={`${Styles.normal_list_item} ${getSpeicalStyle(p)} ${p.className ?? ""}`} style={{
+    // @ts-expect-error: custom val
+    "--normal-list-item-scale": p.smallScaleNum ?? 0.98
+  }}></div>
 )
 
 export default NormalListItem;
