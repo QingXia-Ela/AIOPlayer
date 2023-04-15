@@ -1,5 +1,5 @@
 import NormalListItem from "@/components/NormalListItem";
-import { FunctionComponent, PropsWithChildren } from "react";
+import { FunctionComponent } from "react";
 import { BottomListIconItemType, BottomListImgItemType, SingleBottomListItemType } from "../../constant";
 import Styles from './index.module.scss'
 

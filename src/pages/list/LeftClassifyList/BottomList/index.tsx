@@ -42,7 +42,7 @@ const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = () 
   }, [])
   return (
     <div className={Styles.list}>
-      <WhiteZebraScrollbar>
+      <WhiteZebraScrollbar marginBarHeightLimit={3}>
         {
           list.map((v) => (
             <ListLeftBottomDetailItem item={v} key={v.id} />
