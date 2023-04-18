@@ -31,7 +31,7 @@ export default defineConfig(async () => ({
   resolve: {
     alias: {
       '@': '/src',
-      '@rebuildMui': '/src/components/mui'
+      '@rebuildMui': '/src/components/_mui'
     }
   }
 }));

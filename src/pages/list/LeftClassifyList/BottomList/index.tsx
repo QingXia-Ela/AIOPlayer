@@ -16,6 +16,7 @@ const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ 
       {
         ListData.length ? (
           <WhiteZebraScrollbar marginBarHeightLimit={3.1} ScrollbarDegNum={ScrollbarDegNum}>
+            {/* 待优化伪列表 */}
             {
               ListData.map((v) => (
                 <ListLeftBottomDetailItem item={v} key={v.id} />

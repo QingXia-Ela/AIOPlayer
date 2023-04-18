@@ -6,7 +6,7 @@ export default styled(({ className, ...props }: TooltipProps) => (
 ))(() => ({
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: "#000",
-    fontSize: ".2rem",
-    border: ".02rem solid rgba(255,255,255,0.6)"
+    fontSize: ".16rem",
+    border: ".02rem solid rgba(255,255,255,0.3)"
   },
 }));
