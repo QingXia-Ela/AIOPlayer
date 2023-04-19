@@ -5,33 +5,24 @@ import Styles from './index.module.scss'
 import ListLeftTopSelect from "./TopSelect";
 import ListLeftMiddleModify from "./MiddleModify";
 import ListLeftBottomDetails from "./BottomList";
+import APIStoreInstance from "@/store/API";
+import { observer } from "mobx-react";
 
 interface LeftClassifyListProps {
-
+  store: typeof APIStoreInstance
 }
 
-const LeftClassifyList: FunctionComponent<LeftClassifyListProps> = () => {
-  const [list, setList] = useState([])
-
+const LeftClassifyList: FunctionComponent<LeftClassifyListProps> = observer(({ store = APIStoreInstance }) => {
   useEffect(() => {
-    albums().then(({ data: { data } }) => {
-      // @ts-expect-error: 1
-      setList(data.map(({ cid, coverUrl, name, artistes }) => ({
-        type: "img",
-        id: cid,
-        src: coverUrl,
-        title: name,
-        subTitle: artistes[0]
-      })))
-    })
+    store.fetchAlbumsData()
   }, [])
   return (
     <div className={Styles.left_classify_list}>
       <ListLeftTopSelect selectOption={defaultSort} />
       <ListLeftMiddleModify />
-      <ListLeftBottomDetails ListData={list} ScrollbarDegNum={0.75} />
+      <ListLeftBottomDetails ListData={store.AlbumsDataList} ScrollbarDegNum={0.75} />
     </div>
   );
-}
+})
 
 export default LeftClassifyList;

@@ -7,17 +7,17 @@ import request from 'monster-siren-api/dist/packages/utils/request'
 const BaseUrl = 'http://localhost:3000'
 
 export async function tauriRequest(url: string, method: Method) {
-  return await fetch(url, {
+  return (await fetch(url, {
     // @ts-expect-error: upper case prevent
     method: method.toUpperCase(),
-  })
+  })).data
 }
 
 export async function normalRequest(url: string, method: Method) {
   const FinalUrl = BaseUrl + url.replaceAll('https://monster-siren.hypergryph.com/api', '')
-  return await request(FinalUrl, {
+  return (await request(FinalUrl, {
     method,
-  })
+  })).data
 }
 
 export default async function (method: Method, url: string, config: RequestConfig = {}) {
