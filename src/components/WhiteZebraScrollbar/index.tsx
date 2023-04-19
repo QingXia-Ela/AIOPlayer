@@ -77,6 +77,14 @@ const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children,
             style={marginBarHeightStyle}
           />
         )}
+        renderView={(prop) => {
+          return (
+            <div {...prop} className={`${Styles.scroll_view} hide_scrollbar`}>
+              {children}
+            </div>
+          )
+        }
+        }
         renderThumbVertical={() => (<div></div>)}
         onScroll={() => onBarScrollThrottle(ScrollInstance.current!.getValues(), setScrollThumbHeightPrecentage, ScrollbarDegNum)}
       >

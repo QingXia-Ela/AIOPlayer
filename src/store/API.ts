@@ -27,8 +27,6 @@ export class APIStore {
     makeAutoObservable(this)
   }
 
-
-
   /**
    * 获取专辑数据
    * @param refresh 强制刷新

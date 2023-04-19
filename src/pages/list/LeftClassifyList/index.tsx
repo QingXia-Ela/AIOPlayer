@@ -9,7 +9,7 @@ import APIStoreInstance from "@/store/API";
 import { observer } from "mobx-react";
 
 interface LeftClassifyListProps {
-  store: typeof APIStoreInstance
+  store?: typeof APIStoreInstance
 }
 
 const LeftClassifyList: FunctionComponent<LeftClassifyListProps> = observer(({ store = APIStoreInstance }) => {
@@ -20,7 +20,7 @@ const LeftClassifyList: FunctionComponent<LeftClassifyListProps> = observer(({ s
     <div className={Styles.left_classify_list}>
       <ListLeftTopSelect selectOption={defaultSort} />
       <ListLeftMiddleModify />
-      <ListLeftBottomDetails ListData={store.AlbumsDataList} ScrollbarDegNum={0.75} />
+      <ListLeftBottomDetails ListData={store.AlbumsDataList} ScrollbarDegNum={0.6} />
     </div>
   );
 })
