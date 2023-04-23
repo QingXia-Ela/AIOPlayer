@@ -12,7 +12,7 @@ interface RightListTopInfoProps {
 }
 
 const EmptyListInfo = {
-  name: "这里什么都没有...",
+  name: "主播U的专享占位符",
   author: ["塞壬唱片-MSR"],
   intro: "没给主播U点关注的XDM点点关注家人们\n什么？为什么要点关注？我也不知道\n总之就是点点关注"
 }

@@ -8,6 +8,7 @@ specifiers:
   '@reduxjs/toolkit': ^1.9.3
   '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.3
+  '@tweenjs/tween.js': ^20.0.3
   '@types/lodash': ^4.14.192
   '@types/node': ^18.7.10
   '@types/react': ^18.0.15
@@ -50,6 +51,7 @@ dependencies:
   '@mui/material': registry.npmmirror.com/@mui/material/5.11.15_xqeqsl5kvjjtyxwyi3jhw3yuli
   '@reduxjs/toolkit': registry.npmmirror.com/@reduxjs/toolkit/1.9.3_k4ae6lp43ej6mezo3ztvx6pykq
   '@tauri-apps/api': registry.npmmirror.com/@tauri-apps/api/1.2.0
+  '@tweenjs/tween.js': 20.0.3
   axios: registry.npmmirror.com/axios/1.3.4
   better-scroll: registry.npmmirror.com/better-scroll/2.5.0
   history: registry.npmmirror.com/history/5.3.0
@@ -370,6 +372,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@tweenjs/tween.js/20.0.3:
+    resolution: {integrity: sha512-SYUe1UgY5HM05EB4+0B4arq2IPjvyzKXoklXKxSYrc2IFxGm1cBrqg5XbiB5uwbs0xY5j+rj986NAJMM0KZaUw==}
+    dev: false
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
