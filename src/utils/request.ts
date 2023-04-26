@@ -1,7 +1,8 @@
 import { Method } from 'axios'
 import { fetch, getClient } from '@tauri-apps/api/http'
 import type { RequestConfig } from 'monster-siren-api/dist/packages/declare/modules'
-import request from 'monster-siren-api/dist/packages/utils/request'
+import request, { } from 'monster-siren-api/dist/packages/utils/request'
+import { RequestUtil } from 'monster-siren-api/dist/packages/declare/modules'
 
 // monster-siren server host
 const BaseUrl = 'http://localhost:3000'
@@ -20,7 +21,7 @@ export async function normalRequest(url: string, method: Method) {
   })).data
 }
 
-export default async function (method: Method, url: string, config: RequestConfig = {}) {
+export default async function <T = any>(method: Method, url: string, config: RequestConfig = {}): Promise<T> {
   const {
     params,
   } = config
