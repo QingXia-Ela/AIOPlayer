@@ -1,7 +1,8 @@
+import RowZebraDivider from "@/components/RowZebraDivider";
 import SilverBorderButton from "@/components/SilverBorderButton";
 import { FunctionComponent } from "react";
-import Styles from './index.module.scss'
-
+import Styles from './index.module.scss';
+import NavSearch from "@/components/SearchInput";
 
 interface RightListMiddleControlProps {
 
@@ -21,6 +22,10 @@ const RightListMiddleControl: FunctionComponent<RightListMiddleControlProps> = (
         </i>
         <span className={Styles.text}>PLAY</span>
       </SilverBorderButton>
+      <div className={Styles.divider}>
+        <RowZebraDivider />
+      </div>
+      <NavSearch placeholder="搜索歌单歌曲..." className={Styles.search} />
     </div>
   );
 }
