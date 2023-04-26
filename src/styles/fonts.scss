@@ -1,14 +1,25 @@
 @font-face {
+  font-family: NovecentoSansWide-Normal;
+  src: url(/fonts/NovecentoSansWide-Normal.ttf);
+}
+
+
+@font-face {
+  font-family: NovecentoSansWide-UltraLight;
+  src: url(/fonts/NovecentoSansWide-UltraLight.ttf);
+}
+
+@font-face {
   font-family: SourceHanSansCN-Normal;
-  src: url(/SourceHanSansCN-Normal.ttf);
+  src: url(/fonts/SourceHanSansCN-Normal.ttf);
 }
 
 @font-face {
   font-family: SourceHanSansCN-Bold;
-  src: url(/SourceHanSansCN-Bold.otf);
+  src: url(/fonts/SourceHanSansCN-Bold.otf);
 }
 
 @font-face {
   font-family: SourceHanSansCN-Heavy;
-  src: url(/SourceHanSansCN-Heavy.otf);
+  src: url(/fonts/SourceHanSansCN-Heavy.otf);
 }

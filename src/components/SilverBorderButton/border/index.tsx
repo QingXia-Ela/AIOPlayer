@@ -33,14 +33,6 @@ const SilverBorder = forwardRef<SilverBorderMethods, SilverBorderProps>((props, 
   const r1 = createRef<SVGRadialGradientElement>()
   const r2 = createRef<SVGRadialGradientElement>()
 
-  // window._SET_POS_ = (p: typeof pos, duration = 60) => {
-  //   TweenObj?.stop()
-  //   TweenObj = new Tween({ ...pos }).to(p, duration).onUpdate((o) => {
-  //     console.log(o);
-
-  //     setPos(o)
-  //   }).start()
-  // }
   useEffect(() => {
     return () => {
       clearInterval(timer)
@@ -66,7 +58,7 @@ const SilverBorder = forwardRef<SilverBorderMethods, SilverBorderProps>((props, 
       } else {
         if (!timer) timer = setInterval(() => {
           TweenObj?.update()
-        }, 66)
+        }, 33)
       }
     }
   }))
