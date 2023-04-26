@@ -31,7 +31,7 @@ const SilverBorderButton: FunctionComponent<React.DetailedHTMLProps<React.Button
           x2: 0,
           y2: 1
         }, 300, true)
-      }, 160);
+      }, 200);
     })
   }, [])
   return (

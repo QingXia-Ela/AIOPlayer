@@ -34,7 +34,7 @@ const onBarScroll = (values: positionValues, setFunc: React.Dispatch<React.SetSt
 
 const onBarScrollThrottle = throttle(onBarScroll, 50)
 
-const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children, marginBarHeightLimit = 0, ScrollbarDegNum, ...props }) => {
+const WhiteZebraScrollbar = React.forwardRef<HTMLDivElement, WhiteScrollbarProps>(({ children, marginBarHeightLimit = 0, ScrollbarDegNum, ...props }, ref) => {
   const [scrollThumbHeightPrecentage, setScrollThumbHeightPrecentage] = React.useState<scrollClipPathProps>({
     lt: -1,
     rt: 1,
@@ -62,6 +62,7 @@ const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children,
   return (
     <div
       className={Styles.white_scroll_wrapper}
+      ref={ref}
     >
       <div className={`${Styles["white_zebra_scrollbar_thumb-vertical"]}`} style={{
         clipPath: `polygon(0% ${lt}%, 0% ${lb}%, 100% ${rb}%, 100% ${rt}%)`,
@@ -92,6 +93,6 @@ const WhiteZebraScrollbar: FunctionComponent<WhiteScrollbarProps> = ({ children,
       </Scrollbars>
     </div>
   );
-}
+})
 
 export default WhiteZebraScrollbar;
