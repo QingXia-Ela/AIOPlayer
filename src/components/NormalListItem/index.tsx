@@ -1,6 +1,7 @@
 import { FunctionComponent, DetailedHTMLProps, HTMLAttributes } from "react";
 import Styles from './index.module.scss'
 
+
 interface NormalListItemProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   invalid?: boolean
   selected?: boolean
@@ -23,11 +24,27 @@ const getSpeicalStyle = (props: NormalListItemProps) => {
   return finalStyle
 }
 
-const NormalListItem: FunctionComponent<NormalListItemProps> = ({ SmallScaleNum, className, ...p }) => (
-  <div {...p} className={`${Styles.normal_list_item} ${getSpeicalStyle(p)} ${className ?? ""}`} style={{
-    // @ts-expect-error: custom val
-    "--normal-list-item-scale": SmallScaleNum ?? 0.98
-  }}></div>
+const NormalListItem: FunctionComponent<NormalListItemProps> = ({ SmallScaleNum, className, children, ref, ...p }) => (
+  <div
+    {...p}
+    className={`${Styles.normal_list_item} ${getSpeicalStyle(p)} ${className ?? ""}`}
+    ref={ref}
+    style={{
+      // @ts-expect-error: custom val
+      "--normal-list-item-scale": SmallScaleNum ?? 0.98
+    }}
+  >{children}</div>
+)
+
+export const getNormalListItemStyle = ({ className, SmallScaleNum, invalid, selected, activeOnClick, disabled }: NormalListItemProps = {}) => (
+  {
+    className: `${Styles.normal_list_item} ${getSpeicalStyle({
+      invalid, selected, activeOnClick, disabled
+    })} ${className ?? ""}`,
+    style: {
+      "--normal-list-item-scale": SmallScaleNum ?? 0.98
+    }
+  }
 )
 
 export default NormalListItem;
