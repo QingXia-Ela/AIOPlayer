@@ -30,6 +30,7 @@ const NormalListItem: FunctionComponent<NormalListItemProps> = ({ SmallScaleNum,
     className={`${Styles.normal_list_item} ${getSpeicalStyle(p)} ${className ?? ""}`}
     ref={ref}
     style={{
+      ...p.style,
       // @ts-expect-error: custom val
       "--normal-list-item-scale": SmallScaleNum ?? 0.98
     }}
