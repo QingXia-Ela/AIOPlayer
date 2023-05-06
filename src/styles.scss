@@ -1,5 +1,6 @@
 @import url(./assets/iconfonts/basic/iconfont.css);
 @import url(./styles/fonts.scss);
+@import url(./styles/width_height.scss);
 
 :root {
   font-size: 50px;
@@ -32,6 +33,18 @@ body {
   overflow: hidden;
 }
 
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: right;
+}
+
 a {
   text-decoration: none;
 }
@@ -40,14 +53,6 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.w100 {
-  width: 100%;
-}
-
-.h100 {
-  height: 100%;
 }
 
 .hide_scrollbar {
