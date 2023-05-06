@@ -29,10 +29,6 @@ const GetBackgroundTypeComponent = (store: typeof BackgroundStoreInstance) => {
 }
 
 export default observer(({ store = BackgroundStoreInstance }) => {
-  useEffect(() => {
-    console.log('component render');
-  })
-
   return (
     <div className={Styles.background}>
       <BackgroundMask store={store} />

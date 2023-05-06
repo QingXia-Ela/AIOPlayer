@@ -84,4 +84,4 @@ const SilverBorder = forwardRef<SilverBorderMethods, SilverBorderProps>((props, 
 
 SilverBorder.displayName = "SilverBorder"
 
-export default memo(SilverBorder);
+export default SilverBorder;

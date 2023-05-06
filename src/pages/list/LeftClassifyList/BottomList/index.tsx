@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Styles from './index.module.scss'
-import WhiteZebraScrollbar from "@/components/WhiteZebraScrollbar";
+import WhiteZebraScrollbars from "@/components/WhiteZebraScrollbars";
 import { BottomListType } from "../constant";
 import ListLeftBottomDetailItem from "./ListItem";
 
@@ -15,14 +15,14 @@ const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ 
     <div className={Styles.list}>
       {
         ListData.length ? (
-          <WhiteZebraScrollbar marginBarHeightLimit={3.1} ScrollbarDegNum={ScrollbarDegNum}>
+          <WhiteZebraScrollbars marginBarHeightLimit={3.1} ScrollbarDegNum={ScrollbarDegNum}>
             {/* 待优化伪列表 */}
             {
               ListData.map((v) => (
                 <ListLeftBottomDetailItem item={v} key={v.id} />
               ))
             }
-          </WhiteZebraScrollbar>
+          </WhiteZebraScrollbars>
         ) : (
           <div className={Styles.empty}>
             <i className="iconfont icon-empty" style={{
