@@ -37,7 +37,6 @@ const WhiteZebraScrollbars: FunctionComponent<PropsWithChildren<WhiteZebraScroll
   const ScrollInstance = React.createRef<Scrollbars>()
   const OuterThumbInstance = React.createRef<OuterThumbMethods>()
   const VirtuosoWrapperRef = React.createRef<VirtuosoMethods>()
-
   // resize on children change
   React.useEffect(() => {
     OuterThumbInstance.current?.ScrollTo(ScrollInstance.current!.getValues())

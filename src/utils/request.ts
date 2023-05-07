@@ -18,7 +18,7 @@ export async function normalRequest(url: string, method: Method) {
   const FinalUrl = BaseUrl + url.replaceAll('https://monster-siren.hypergryph.com/api', '')
   return (await request(FinalUrl, {
     method,
-  })).data
+  }))
 }
 
 export default async function <T = any>(method: Method, url: string, config: RequestConfig = {}): Promise<T> {
