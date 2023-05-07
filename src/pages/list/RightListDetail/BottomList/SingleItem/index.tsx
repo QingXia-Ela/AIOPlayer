@@ -22,12 +22,12 @@ const { className } = getNormalListItemStyle({ className: Styles.single_item })
 const SingleItem: FunctionComponent<SingleItemProps> = ({ name, author, album, time, tags, operation }) => {
   return (
     <div className={Styles.single_item}>
-      <div className="w30" title={name}>{name}</div>
-      <div className="w18">{author}</div>
-      <div className="w18">{album}</div>
+      <div className="w30 text_nowrap" title={name}>{name}</div>
+      <div className="w18 text_nowrap">{author}</div>
+      <div className="w18 text_nowrap">{album}</div>
       <div className={Styles.tags}>{tags?.map((v, i) => <AudioInfoTag key={i} style={{ color: v.color, borderColor: v.color }}>{v.content}</AudioInfoTag>)}</div>
-      <div className="w5">{time}</div>
-      <div className="w15"></div>
+      <div className="w5 text_nowrap">{time}</div>
+      <div className="w15 text_nowrap"></div>
     </div>
   );
 }

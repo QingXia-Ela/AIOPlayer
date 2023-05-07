@@ -12,6 +12,7 @@
 .tags {
   width: 14%;
   display: flex;
+  flex-flow: row wrap;
   gap: .1rem;
   color: #ccc;
   border-color: #ccc;
