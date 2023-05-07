@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useMemo } from "react";
 import Styles from './index.module.scss'
 import WhiteZebraScrollbars from "@/components/WhiteZebraScrollbars";
 import { BottomListType } from "../constant";
@@ -11,17 +11,20 @@ interface ListLeftBottomDetailsProps {
 }
 
 const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ ListData, ScrollbarDegNum }) => {
+
+  const ListDataNodes = useMemo(() => {
+    return ListData.map((v) => (
+      <ListLeftBottomDetailItem item={v} key={v.id} />
+    ))
+  }, [ListData])
+
   return (
     <div className={Styles.list}>
       {
         ListData.length ? (
           <WhiteZebraScrollbars marginBarHeightLimit={3.1} ScrollbarDegNum={ScrollbarDegNum}>
             {/* 待优化伪列表 */}
-            {
-              ListData.map((v) => (
-                <ListLeftBottomDetailItem item={v} key={v.id} />
-              ))
-            }
+            {ListDataNodes}
           </WhiteZebraScrollbars>
         ) : (
           <div className={Styles.empty}>
