@@ -11,9 +11,11 @@
 
 .tags {
   width: 14%;
+  height: .38rem;
   display: flex;
   flex-flow: row wrap;
   gap: .1rem;
   color: #ccc;
   border-color: #ccc;
+  overflow: hidden;
 }
