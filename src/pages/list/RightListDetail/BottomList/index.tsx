@@ -57,15 +57,10 @@ const RightBottomList: FunctionComponent<RightBottomListProps> = () => {
 
   const ListWrapper = createRef<HTMLDivElement>()
 
-  useEffect(() => {
-    console.log("list rerender");
-
-  })
-
   const handleContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
 
-    const res = findParentNode(event.target, (e) => {
+    const res = findParentNode((event.target as HTMLDivElement), (e) => {
       if (e.hasAttribute("data-listitem-flag")) return true
       return false
     })
