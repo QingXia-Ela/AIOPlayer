@@ -10,6 +10,8 @@ interface ListLeftBottomDetailsProps {
   onClickItem?: (id: string) => void
 }
 
+const margin = <div style={{ marginBottom: ".2rem" }}></div>
+
 const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ ListData, ScrollbarDegNum }) => {
 
   const ListDataNodes = useMemo(() => {
@@ -25,6 +27,7 @@ const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ 
           <WhiteZebraScrollbars marginBarHeightLimit={3.1} ScrollbarDegNum={ScrollbarDegNum}>
             {/* 待优化伪列表 */}
             {ListDataNodes}
+            {margin}
           </WhiteZebraScrollbars>
         ) : (
           <div className={Styles.empty}>
