@@ -7,3 +7,11 @@
   border-color: inherit;
   color: inherit;
 }
+
+.alink {
+  &:hover {
+    opacity: .8;
+  }
+
+  cursor: pointer;
+}

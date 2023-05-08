@@ -31,6 +31,7 @@ const getSimdata = (cnt: number) => {
 const NormalListItemStyle = {
   transition: "transform .3s",
   width: "98.2%",
+  containIntrinsicHeight: "1.06rem"
 }
 
 const items = getSimdata(100)

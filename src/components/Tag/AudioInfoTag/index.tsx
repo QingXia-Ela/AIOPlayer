@@ -1,16 +1,18 @@
 import { FunctionComponent, HTMLProps } from 'react';
 import Styles from './index.module.scss'
 
-type AudioInfoTagProps = HTMLProps<HTMLDivElement>
+interface AudioInfoTagProps extends HTMLProps<HTMLAnchorElement> {
+  href?: string
+}
 
 /**
  * color 属性为 inherint，也可通过 style 设置
  */
-const AudioInfoTag: FunctionComponent<AudioInfoTagProps> = ({ children, ...p }) => {
+const AudioInfoTag: FunctionComponent<AudioInfoTagProps> = ({ children, href, ...p }) => {
   return (
-    <div {...p} className={Styles.audio_tag}>
+    <a {...p} className={`${Styles.audio_tag} ${href || p.onClick ? Styles.alink : ""}`} href={href}>
       {children}
-    </div>
+    </a>
   );
 }
 
