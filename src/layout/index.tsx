@@ -2,8 +2,7 @@ import { FunctionComponent } from 'react';
 import Styles from './index.module.scss'
 import Background from "./Background";
 import TitleBar from './TitleBar';
-import WhiteZebraScrollbar from '@/components/WhiteZebraScrollbar';
-
+import BottomPlayer from './BottomPlayer';
 
 interface LayoutProps {
   children?: any
@@ -16,6 +15,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
       <div className={Styles.layout}>
         {children}
       </div>
+      <BottomPlayer />
       <Background></Background>
     </>
   );

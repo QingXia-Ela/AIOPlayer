@@ -47,8 +47,6 @@ const MyDivider: FunctionComponent<{ children?: string }> = ({ children = "" }) 
     }
   }}>{children}</Divider>
 
-const margin = <div style={{ marginBottom: ".2rem" }}></div>
-
 const RightBottomList: FunctionComponent<RightBottomListProps> = () => {
 
   // const [items, setItems] = useState(data)
@@ -122,7 +120,6 @@ const RightBottomList: FunctionComponent<RightBottomListProps> = () => {
           {
             items.length < 200 ? ItemsNode : null
           }
-          {margin}
         </WhiteZebraScrollbars>
       </div>
       <BlackMenu
