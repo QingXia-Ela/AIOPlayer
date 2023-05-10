@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.active {
+  animation-name: active;
+}
+
+.inactive {
+  pointer-events: none;
+  animation-name: inactive;
+}
+
+@keyframes active {
+  0% {
+    opacity: 0;
+    transform: translateY(150%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inactive {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+}
