@@ -1,19 +1,15 @@
-import { IconButton, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { FunctionComponent, useState } from "react";
 import Styles from './index.module.scss'
 import Slider from "@rebuildMui/Slider";
+import IconButton from "@rebuildMui/IconButton";
 
 interface RightOperationProps {
 
 }
 
-const iconStyle = {
-  color: "#fff",
-  transition: "opacity 0.3s",
-  opacity: 0.8,
-  "&:hover": {
-    opacity: 1
-  }
+const getVolumeIcon = (volume: number) => {
+  return volume > 66 ? 'icon-24gl-volumeHigh' : volume > 33 ? 'icon-24gl-volumeMiddle' : volume > 0 ? 'icon-24gl-volumeLow' : 'icon-24gl-volumeZero'
 }
 
 const RightOperation: FunctionComponent<RightOperationProps> = () => {
@@ -26,11 +22,11 @@ const RightOperation: FunctionComponent<RightOperationProps> = () => {
 
   return (
     <Stack spacing={2} direction="row" className={Styles.right_operation} alignItems="center">
-      <IconButton size="large" sx={iconStyle}>
-        <i className={`iconfont icon-24gl-volumeMiddle ${Styles.iconfont}`}></i>
+      <IconButton size="large">
+        <i className={`iconfont ${getVolumeIcon(value)} ${Styles.iconfont}`}></i>
       </IconButton>
-      <Slider valueLabelDisplay="auto" sx={{ width: "2rem" }} aria-label="Volume" value={value} onChange={handleChange} />
-      <IconButton size="large" sx={iconStyle}>
+      <Slider valueLabelDisplay="auto" sx={{ width: "2rem", marginLeft: ".1rem !important" }} aria-label="Volume" value={value} onChange={handleChange} />
+      <IconButton size="large">
         <i className={`iconfont icon-24gl-playlistMusic2 ${Styles.iconfont}`}></i>
       </IconButton>
     </Stack>
