@@ -10,23 +10,37 @@ interface MiddleOperationProps {
 }
 
 const PlayPauseIconMap = {
-  pause: <i className={`iconfont ${Styles.iconfont} icon-24gl-play`} style={{
+  pause: <i className={`iconfont ${Styles.iconfont} icon-24gl-pause`} style={{
     fontSize: ".6rem"
   }}></i>,
-  play: <i className={`iconfont ${Styles.iconfont} icon-24gl-pause`} style={{
+  play: <i className={`iconfont ${Styles.iconfont} icon-24gl-play`} style={{
     fontSize: ".6rem"
   }}></i>
 }
 
+const PlayModeIconMap = {
+  1: <i className={`iconfont ${Styles.iconfont} icon-24gl-shuffle`}></i>,
+  2: <i className={`iconfont ${Styles.iconfont} icon-24gl-repeat2`}></i>,
+  3: <i className={`iconfont ${Styles.iconfont} icon-24gl-repeatOnce2`}></i>
+}
+
 const MiddleOperation: FunctionComponent<MiddleOperationProps> = () => {
   const [play, setPlay] = useState(false);
+  const [playMode, setPlayMode] = useState(1);
 
   return (
     <div className={Styles.middle_operation}>
       <Stack spacing={2} direction="row" margin="0 auto">
-        <IconButton>
-          <i className={`iconfont ${Styles.iconfont} icon-24gl-shuffle`}></i>
-        </IconButton>
+        <div className={Styles.icon_wrapper} onClick={() => setPlayMode(playMode < 3 ? playMode + 1 : 1)}>
+          <FlowUpChangeIcon
+            IconMap={PlayModeIconMap}
+            style={{
+              width: ".5rem",
+              height: ".36rem"
+            }}
+            currentIcon={playMode + ""}
+          />
+        </div>
         <IconButton>
           <i className={`iconfont ${Styles.iconfont} icon-24gl-previous`}></i>
         </IconButton>

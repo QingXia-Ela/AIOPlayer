@@ -6,9 +6,13 @@
 }
 
 .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
   animation-duration: .3s;
   animation-timing-function: ease;
   animation-iteration-count: 1;

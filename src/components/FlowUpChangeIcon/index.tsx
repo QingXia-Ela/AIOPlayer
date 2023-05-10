@@ -9,7 +9,7 @@ interface FlowUpChangeIconProps extends HTMLProps<HTMLDivElement> {
 const FlowUpChangeIcon: FunctionComponent<FlowUpChangeIconProps> = ({ IconMap, currentIcon, ...p }) => {
 
   const MemoIconMapElement = useMemo(() => Object.entries(IconMap).map(([k, v]) => (
-    <div key={k} className={`${Styles.icon} ${currentIcon === k ? Styles.active : Styles.inactive}`}>{v}</div>
+    <div key={k} className={`${Styles.icon} ${currentIcon ? (currentIcon === k ? Styles.active : Styles.inactive) : ""}`}>{v}</div>
   )), [IconMap, currentIcon])
 
   return (

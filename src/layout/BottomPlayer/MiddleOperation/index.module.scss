@@ -10,8 +10,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: .9rem;
+  width: .76rem;
   height: .9rem;
+  cursor: pointer;
+  transition: opacity .3s;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 i.iconfont {
