@@ -15,6 +15,10 @@ export default styled(Slider)(() => ({
   },
   ".MuiSlider-valueLabel": {
     fontSize: ".3rem",
-    padding: ".1rem .2rem"
+    padding: ".1rem .2rem",
+    backgroundColor: "#444"
+  },
+  ".MuiSlider-rail": {
+    opacity: 0.1
   }
 }))
