@@ -1,0 +1,41 @@
+.left_info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: background-color .1s, transform .1s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.left_img {
+  width: 1.9rem;
+  height: 1.9rem;
+
+  .inner_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.right_song_info {
+  width: calc(100% - 1.9rem);
+  padding-left: .3rem;
+
+
+  .song_name {
+    font-family: "Microsoft YaHei";
+    font-size: .42rem;
+  }
+
+  .song_singer {
+    font-size: .3rem;
+    font-weight: 700;
+  }
+}
