@@ -6,7 +6,15 @@
   padding: .1rem .4rem;
 }
 
-.iconfont {
+.icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: .9rem;
+  height: .9rem;
+}
+
+i.iconfont {
   font-size: .36rem;
   color: #fff;
 }
