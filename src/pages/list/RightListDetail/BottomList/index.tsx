@@ -7,6 +7,7 @@ import BlackMenu from '@rebuildMui/Menu/BlackMenu';
 import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
 import { Collapse, Divider } from '@mui/material';
 import findParentNode from '@/utils/DOM/findParentNode';
+import SongList, { SongListMethods } from '@/components/SongList';
 
 interface RightBottomListProps {
 
@@ -28,12 +29,6 @@ const getSimdata = (cnt: number) => {
   }))
 }
 
-const NormalListItemStyle = {
-  transition: "transform .3s",
-  width: "98.2%",
-  containIntrinsicHeight: "1.06rem"
-}
-
 const items = getSimdata(100)
 
 const MyDivider: FunctionComponent<{ children?: string }> = ({ children = "" }) => <Divider
@@ -49,103 +44,43 @@ const MyDivider: FunctionComponent<{ children?: string }> = ({ children = "" }) 
 
 const RightBottomList: FunctionComponent<RightBottomListProps> = () => {
 
-  // const [items, setItems] = useState(data)
+  const SongListRef = createRef<SongListMethods>()
 
-  const [contextMenu, setContextMenu] = useState<{
-    mouseX: number;
-    mouseY: number;
-  } | null>(null);
+  const handleContextMenu = useCallback((item: typeof items[0]) => {
+    console.log(item);
 
-  const ListWrapper = createRef<HTMLDivElement>()
-
-  const handleContextMenu = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.preventDefault();
-
-    const res = findParentNode((event.target as HTMLDivElement), (e) => {
-      if (e.hasAttribute("data-listitem-flag")) return true
-      return false
-    })
-
-    if (!res) return
-
-    setContextMenu(
-      contextMenu === null
-        ? {
-          mouseX: event.clientX + 2,
-          mouseY: event.clientY - 6,
-        }
-        : // repeated contextmenu when it is already open closes it with Chrome 84 on Ubuntu
-        // Other native context menus might behave different.
-        // With this behavior we prevent contextmenu from the backdrop to re-locale existing context menus.
-        null,
-    );
-  };
-
-  const handleClose = () => {
-    setContextMenu(null);
-  };
-
-  const ItemsNode = useMemo(() => {
-    return items.map(
-      (d) => (
-        <NormalListItem style={NormalListItemStyle} SmallScaleNum={0.99} key={d.id} data-listitem-flag>
-          <SingleItem name={"Operation Pyrite"} author={"塞壬唱片-MSR"} album={"危机合约"} time={"01:14"} tags={d.tags} />
-        </NormalListItem>
-      )
-    )
-  }, [items])
+  }, [])
 
   return (
     <>
       <div className={Styles.bottom_list}
-        onContextMenuCapture={handleContextMenu}
-        ref={ListWrapper}
       >
-        <div id='BottomListContextMenuWrapper'></div>
-        <WhiteZebraScrollbars
-          marginBarHeightLimit={0.8}
-          ScrollbarDegNum={0.48}
-          VirtuosoOptions={
-            items.length >= 200 ? {
-              VirtuosoProps: {
-                data: items,
-                components: {
-                  Item: (p) => <NormalListItem {...p} style={NormalListItemStyle} SmallScaleNum={0.99} />
-                },
-                itemContent: (i, d) => (<SingleItem key={d.id} name={"Operation Pyrite"} author={"塞壬唱片-MSR"} album={"危机合约"} time={"01:14"} tags={d.tags} />)
-              }
-            } : undefined
-          }
-        >
-          {
-            items.length < 200 ? ItemsNode : null
-          }
-        </WhiteZebraScrollbars>
+        <SongList
+          ref={SongListRef}
+          data={items}
+          renderFunc={(d) => {
+            return <SingleItem name={"Operation Pyrite"} author={"塞壬唱片-MSR"} album={"危机合约"} time={"01:14"} tags={d.tags} />
+          }}
+          contextMenu={{
+            provider({ handleClose }) {
+              return <>
+                <BlackMenuItem onClick={handleClose}>播放</BlackMenuItem>
+                <BlackMenuItem onClick={handleClose}>下一首播放</BlackMenuItem>
+                <BlackMenuItem onClick={handleClose}>添加到播放列表</BlackMenuItem>
+                <MyDivider />
+                <BlackMenuItem onClick={handleClose}>显示专辑</BlackMenuItem>
+                <BlackMenuItem onClick={handleClose}>删除</BlackMenuItem>
+                <MyDivider />
+                <BlackMenuItem onClick={handleClose}>显示信息</BlackMenuItem>
+                <BlackMenuItem onClick={handleClose}>编辑信息</BlackMenuItem>
+                <MyDivider />
+                <BlackMenuItem onClick={handleClose}>下载歌曲</BlackMenuItem>
+              </>
+            },
+          }}
+          onContextMenu={handleContextMenu}
+        />
       </div>
-      <BlackMenu
-        open={contextMenu !== null}
-        onClose={handleClose}
-        anchorReference="anchorPosition"
-        anchorPosition={
-          contextMenu !== null
-            ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
-            : undefined
-        }
-        // prevent context menu change dom cause page choked in app
-        container={document.querySelector(`#BottomListContextMenuWrapper`)}
-      >
-        <BlackMenuItem onClick={handleClose}>播放</BlackMenuItem>
-        <BlackMenuItem onClick={handleClose}>下一首播放</BlackMenuItem>
-        <BlackMenuItem onClick={handleClose}>添加到播放列表</BlackMenuItem>
-        <MyDivider />
-        <BlackMenuItem onClick={handleClose}>显示专辑</BlackMenuItem>
-        <BlackMenuItem onClick={handleClose}>删除</BlackMenuItem>
-        <MyDivider />
-        <BlackMenuItem onClick={handleClose}>显示信息</BlackMenuItem>
-        <BlackMenuItem onClick={handleClose}>编辑信息</BlackMenuItem>
-        <MyDivider />
-        <BlackMenuItem onClick={handleClose}>下载歌曲</BlackMenuItem>
-      </BlackMenu>
     </>
   );
 }
