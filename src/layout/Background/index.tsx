@@ -11,7 +11,7 @@ import { observer } from "mobx-react";
 // @ts-expect-error: test
 window._BACKGROUND_STORE_ = BackgroundStoreInstance
 
-const GetBackgroundTypeComponent = (store: typeof BackgroundStoreInstance) => {
+const GetBackgroundTypeComponent = (store: typeof BackgroundStoreInstance): JSX.Element => {
   switch (store.type) {
     case "css": {
       const { cssContent } = store.options as cssBackgroundOptions
