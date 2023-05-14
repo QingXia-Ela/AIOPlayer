@@ -21,11 +21,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
       "@rebuildMui/*": [
         "./src/components/_mui/*"
+      ],
+      "@/*": [
+        "./src/*"
       ]
     }
   },
