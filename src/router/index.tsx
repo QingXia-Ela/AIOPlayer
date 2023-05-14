@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import { createBrowserHistory } from 'history'
 import Redirect from "@/components/Rediect";
 import ListPage from "@/pages/list";
+import DownloadPage from "@/pages/download";
 
 type RouteObjectExtends = RouteObject & {
   navInfo?: {
@@ -14,7 +15,7 @@ type RouteObjectExtends = RouteObject & {
 const routerList: RouteObjectExtends[] = [
   {
     path: '/',
-    element: <Redirect to="/list" />
+    element: <Redirect to="/download" />
   },
   {
     navInfo: {
@@ -38,20 +39,11 @@ const routerList: RouteObjectExtends[] = [
   },
   {
     navInfo: {
-      name: "已下载",
+      name: "下载管理",
       path: '/download',
     },
     path: '/download',
-    children: [
-      {
-        path: 'processing',
-        element: <div>download/processing</div>
-      },
-      {
-        path: 'done',
-        element: <div>download/done</div>
-      }
-    ]
+    element: <DownloadPage />
   },
   {
     path: '/*',

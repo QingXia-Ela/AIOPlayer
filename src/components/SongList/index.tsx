@@ -1,4 +1,3 @@
-import Styles from './index.module.scss'
 import WhiteZebraScrollbars from '@/components/WhiteZebraScrollbars';
 import { useMemo, useState, forwardRef, useImperativeHandle } from 'react';
 import findParentNode from '@/utils/DOM/findParentNode';
