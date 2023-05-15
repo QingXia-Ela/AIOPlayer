@@ -7,6 +7,8 @@ export default styled(({ ...p }: MenuItemProps) => (
   fontFamily: "SourceHanSansCN-Normal",
   fontSize: ".3rem",
   transition: "background-color .3s",
+  color: "#fff",
+  backgroundColor: "#000",
   "&:hover": {
     backgroundColor: "#333"
   }

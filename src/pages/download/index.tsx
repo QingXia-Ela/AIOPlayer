@@ -1,8 +1,10 @@
 import { WhiteTab, WhiteTabs } from '@rebuildMui/Tabs/WhiteTab';
-import { Badge } from '@mui/material';
+import { Badge, Button, Dialog, DialogTitle, SelectChangeEvent, Stack } from '@mui/material';
 import { useState } from 'react';
 import Styles from './index.module.scss'
 import { ArkBadge } from '@rebuildMui/Badge';
+import Select from '@rebuildMui/Select';
+import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
 
 interface DownloadPageProps {
 
@@ -24,7 +26,13 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
 
   const [value, setValue] = useState(0);
 
+  const [audioSource, setAudioSource] = useState("全部")
 
+  const [dialogOpen, setDialogOpen] = useState(false)
+
+  const handleChange = (event: SelectChangeEvent<unknown>) => {
+    // setAudioSource(event.target.value as number)
+  }
 
   return (
     <div className={Styles.download_page}>
@@ -42,7 +50,16 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
             已完成
           </ArkBadge>
         } />
+        <Button variant='text' color="inherit" sx={{ fontSize: '.3rem' }} onClick={() => setDialogOpen(true)}>音频来源：{audioSource}</Button>
       </WhiteTabs>
+
+      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+        <DialogTitle>test</DialogTitle>
+        <BlackMenuItem value="全部">全部</BlackMenuItem>
+        <BlackMenuItem value="音频">音频</BlackMenuItem>
+        <BlackMenuItem value="视频">视频</BlackMenuItem>
+        <Button onClick={() => setDialogOpen(false)}>取消</Button>
+      </Dialog>
     </div>
   );
 }
