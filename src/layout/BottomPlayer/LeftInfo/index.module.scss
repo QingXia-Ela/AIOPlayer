@@ -14,8 +14,8 @@
 }
 
 .left_img {
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 5.9375rem;
+  height: 5.9375rem;
 
   .inner_img {
     width: 100%;
@@ -25,17 +25,17 @@
 }
 
 .right_song_info {
-  width: calc(100% - 1.9rem);
-  padding-left: .3rem;
+  width: calc(100% - 5.9375rem);
+  padding-left: 0.9375rem;
 
 
   .song_name {
     font-family: "Microsoft YaHei";
-    font-size: .42rem;
+    font-size: 1.3125rem;
   }
 
   .song_singer {
-    font-size: .3rem;
+    font-size: 0.9375rem;
     font-weight: 700;
   }
 }

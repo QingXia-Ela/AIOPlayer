@@ -3,15 +3,15 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  padding: .1rem .4rem;
+  padding: 0.3125rem 1.2500rem;
 }
 
 .icon_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: .76rem;
-  height: .9rem;
+  width: 2.3750rem;
+  height: 2.8125rem;
   cursor: pointer;
   transition: opacity .3s;
   opacity: .8;
@@ -22,6 +22,6 @@
 }
 
 i.iconfont {
-  font-size: .36rem;
+  font-size: 1.1250rem;
   color: #fff;
 }

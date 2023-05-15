@@ -18,7 +18,7 @@ const TimeSlider: FunctionComponent<TimeSliderProps> = () => {
   return (
     <div className={Styles.time_slider}>
       <div className={Styles.timer}>{ParseTime(value)}</div>
-      <Slider sx={{ width: "calc(100% - 2.4rem)", top: ".01rem" }} aria-label="Volume" value={value} onChange={handleChange} max={1145} min={0} />
+      <Slider sx={{ width: "calc(100% - 7.5000rem)", top: "0.0313rem" }} aria-label="Volume" value={value} onChange={handleChange} max={1145} min={0} />
       <div className={Styles.timer}>23:33</div>
     </div>
   );

@@ -5,7 +5,7 @@ export default styled(IconButton)(({ theme }) => ({
   color: "#fff",
   transition: "opacity 0.3s",
   opacity: 0.8,
-  padding: ".2rem",
+  padding: "0.6250rem",
   "&:hover": {
     opacity: 1
   }

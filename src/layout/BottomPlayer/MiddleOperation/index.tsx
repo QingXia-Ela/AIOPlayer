@@ -11,10 +11,10 @@ interface MiddleOperationProps {
 
 const PlayPauseIconMap = {
   pause: <i className={`iconfont ${Styles.iconfont} icon-24gl-pause`} style={{
-    fontSize: ".6rem"
+    fontSize: "1.8750rem"
   }}></i>,
   play: <i className={`iconfont ${Styles.iconfont} icon-24gl-play`} style={{
-    fontSize: ".6rem"
+    fontSize: "1.8750rem"
   }}></i>
 }
 
@@ -35,8 +35,8 @@ const MiddleOperation: FunctionComponent<MiddleOperationProps> = () => {
           <FlowUpChangeIcon
             IconMap={PlayModeIconMap}
             style={{
-              width: ".5rem",
-              height: ".36rem"
+              width: "1.5625rem",
+              height: "1.1250rem"
             }}
             currentIcon={playMode + ""}
           />
@@ -48,8 +48,8 @@ const MiddleOperation: FunctionComponent<MiddleOperationProps> = () => {
           <FlowUpChangeIcon
             IconMap={PlayPauseIconMap}
             style={{
-              width: ".5rem",
-              height: ".6rem"
+              width: "1.5625rem",
+              height: "1.8750rem"
             }}
             currentIcon={play ? 'pause' : 'play'}
           />

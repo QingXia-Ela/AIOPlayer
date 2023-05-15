@@ -25,7 +25,7 @@ const RightOperation: FunctionComponent<RightOperationProps> = () => {
       <IconButton size="large">
         <i className={`iconfont ${getVolumeIcon(value)} ${Styles.iconfont}`}></i>
       </IconButton>
-      <Slider valueLabelDisplay="auto" sx={{ width: "2rem", marginLeft: ".1rem !important" }} aria-label="Volume" value={value} onChange={handleChange} />
+      <Slider valueLabelDisplay="auto" sx={{ width: "6.2500rem", marginLeft: "0.3125rem !important" }} aria-label="Volume" value={value} onChange={handleChange} />
       <IconButton size="large">
         <i className={`iconfont icon-24gl-playlistMusic2 ${Styles.iconfont}`}></i>
       </IconButton>

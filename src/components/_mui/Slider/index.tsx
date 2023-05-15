@@ -4,8 +4,8 @@ import Slider from "@mui/material/Slider";
 export default styled(Slider)(() => ({
   color: "#ccc",
   ".MuiSlider-thumb": {
-    width: ".36rem",
-    height: ".36rem",
+    width: "1.1250rem",
+    height: "1.1250rem",
     "&.Mui-focusVisible, &:hover": {
       boxShadow: "0 0 0 5px #ffffff22",
     },
@@ -14,8 +14,8 @@ export default styled(Slider)(() => ({
     }
   },
   ".MuiSlider-valueLabel": {
-    fontSize: ".3rem",
-    padding: ".1rem .2rem",
+    fontSize: "0.9375rem",
+    padding: "0.3125rem 0.6250rem",
     backgroundColor: "#444"
   },
   ".MuiSlider-rail": {

@@ -29,8 +29,8 @@ const ListLeftBottomDetails: FunctionComponent<ListLeftBottomDetailsProps> = ({ 
         ) : (
           <div className={Styles.empty}>
             <i className="iconfont icon-empty" style={{
-              marginBottom: ".4rem",
-              fontSize: "1.2rem"
+              marginBottom: "1.2500rem",
+              fontSize: "3.7500rem"
             }}></i>
             <div className={Styles.text}>啥都没有找到捏~(￣▽￣)~*</div>
           </div>

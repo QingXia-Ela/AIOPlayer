@@ -31,7 +31,7 @@ const OuterThumbStyle: CSSProperties = {
   width: "10px",
   backgroundImage: "linear-gradient(45deg, transparent, transparent 40%, #ccc 0, #ccc 60%, transparent 0, transparent)",
   backgroundRepeat: "repeat",
-  backgroundSize: ".12rem .12rem",
+  backgroundSize: "0.3750rem 0.3750rem",
   transform: "none !important",
 }
 

@@ -3,7 +3,6 @@ import { Badge, Button, Dialog, DialogTitle, SelectChangeEvent, Stack } from '@m
 import { useState } from 'react';
 import Styles from './index.module.scss'
 import { ArkBadge } from '@rebuildMui/Badge';
-import Select from '@rebuildMui/Select';
 import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
 
 interface DownloadPageProps {
@@ -13,11 +12,11 @@ interface DownloadPageProps {
 const BadgeStyles = {
   color: '#fff',
   ".MuiBadge-badge": {
-    fontSize: '.12rem',
+    fontSize: '0.3750rem',
     backgroundColor: 'transparent',
-    minWidth: '.3rem',
-    width: '.3rem',
-    height: '.3rem',
+    minWidth: '0.9375rem',
+    width: '0.9375rem',
+    height: '0.9375rem',
     border: "1px solid #fff",
   }
 }
@@ -50,7 +49,7 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
             已完成
           </ArkBadge>
         } />
-        <Button variant='text' color="inherit" sx={{ fontSize: '.3rem' }} onClick={() => setDialogOpen(true)}>音频来源：{audioSource}</Button>
+        <Button variant='text' color="inherit" sx={{ fontSize: '0.9375rem' }} onClick={() => setDialogOpen(true)}>音频来源：{audioSource}</Button>
       </WhiteTabs>
 
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>

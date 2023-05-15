@@ -1,10 +1,10 @@
 .middle_control {
   display: flex;
   align-items: center;
-  height: 1.4rem;
+  height: 4.3750rem;
 
   .button {
-    width: 1.8rem;
+    width: 5.6250rem;
   }
 }
 
@@ -18,7 +18,7 @@
 
 .text {
   color: #c6c9ce;
-  font-size: .2rem;
+  font-size: 0.6250rem;
   font-weight: 700;
 }
 
@@ -26,12 +26,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(100% - 2rem);
+  width: calc(100% - 6.2500rem);
   height: 100%;
-  padding: 0 .4rem;
+  padding: 0 1.2500rem;
 }
 
 .search {
-  height: .64rem;
-  font-size: .2rem;
+  height: 2.0000rem;
+  font-size: 0.6250rem;
 }

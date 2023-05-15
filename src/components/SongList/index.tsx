@@ -27,7 +27,7 @@ export interface SongListMethods {
 const NormalListItemStyle = {
   transition: "transform .3s",
   width: "98.2%",
-  containIntrinsicHeight: "1.06rem"
+  containIntrinsicHeight: "3.3125rem"
 }
 
 const SongList = forwardRef<SongListMethods, SongListProps>(({ data, contextMenu, renderFunc, virtualLimit = 200, onContextMenu, ...p }, ref) => {
