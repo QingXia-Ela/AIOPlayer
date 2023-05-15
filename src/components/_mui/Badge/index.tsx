@@ -10,7 +10,7 @@ const ArkBadge = styled((props: BadgeProps) => <Badge {...props} variant="dot" /
     minWidth: ".12rem",
     height: ".12rem",
     transform: "rotate(-45deg) translate(60%,-60%)",
-    boxShadow: "0 0 5px 5px #000",
+    boxShadow: "0 0 3px 3px #000",
     "&:before": {
       content: "''",
       position: "absolute",
