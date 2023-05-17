@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import { IconButton } from "@mui/material";
 
-export default styled(IconButton)(({ theme }) => ({
+export default styled(IconButton)(() => ({
   color: "#fff",
   transition: "opacity 0.3s",
   opacity: 0.8,
