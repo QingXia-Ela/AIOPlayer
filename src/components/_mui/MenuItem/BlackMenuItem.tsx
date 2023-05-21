@@ -8,7 +8,6 @@ export default styled(({ ...p }: MenuItemProps) => (
   fontSize: "0.9375rem",
   transition: "background-color .3s",
   color: "#fff",
-  backgroundColor: "#000",
   "&:hover": {
     backgroundColor: "#333"
   }
