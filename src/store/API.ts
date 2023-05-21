@@ -41,7 +41,7 @@ export class APIStore {
     albums().then(
       action("fetchAlbumsSuccess", ({ data }) => {
         this.AlbumsData.state = "done"
-        this.AlbumsData.data = data
+        this.AlbumsData.data = data || []
         this.AlbumsData.timer = setTimeout(() => {
           clearTimeout(this.AlbumsData.timer)
           this.AlbumsData.timer = undefined

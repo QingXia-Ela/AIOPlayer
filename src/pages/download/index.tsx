@@ -1,8 +1,10 @@
 import { WhiteTab, WhiteTabs } from '@rebuildMui/Tabs/WhiteTab';
-import { Badge } from '@mui/material';
+import { Badge, Button, Dialog, DialogTitle, SelectChangeEvent, Stack } from '@mui/material';
 import { useState } from 'react';
 import Styles from './index.module.scss'
 import { ArkBadge } from '@rebuildMui/Badge';
+import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
+import DownloadPath from './DownloadPath';
 
 interface DownloadPageProps {
 
@@ -11,11 +13,11 @@ interface DownloadPageProps {
 const BadgeStyles = {
   color: '#fff',
   ".MuiBadge-badge": {
-    fontSize: '.12rem',
+    fontSize: '0.3750rem',
     backgroundColor: 'transparent',
-    minWidth: '.3rem',
-    width: '.3rem',
-    height: '.3rem',
+    minWidth: '0.9375rem',
+    width: '0.9375rem',
+    height: '0.9375rem',
     border: "1px solid #fff",
   }
 }
@@ -25,6 +27,7 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
   const [value, setValue] = useState(0);
 
 
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   return (
     <div className={Styles.download_page}>
@@ -42,7 +45,18 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
             已完成
           </ArkBadge>
         } />
+
       </WhiteTabs>
+      <Stack justifyContent="space-between">
+        <DownloadPath />
+      </Stack>
+      <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+        <DialogTitle>test</DialogTitle>
+        <BlackMenuItem value="全部">全部</BlackMenuItem>
+        <BlackMenuItem value="音频">音频</BlackMenuItem>
+        <BlackMenuItem value="视频">视频</BlackMenuItem>
+        <Button onClick={() => setDialogOpen(false)}>取消</Button>
+      </Dialog>
     </div>
   );
 }

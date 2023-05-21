@@ -24,9 +24,11 @@ export type BackgroundOptionsType = cssBackgroundOptions | videoBackgroundOption
 export type BackgroundType = keyof BackgroundTypeOptionsCollect
 
 export class BackgroundStore {
-  type: BackgroundType = "css"
-  options: BackgroundOptionsType = {}
-  maskOpacity = 0
+  type: BackgroundType = "image"
+  options: BackgroundOptionsType = {
+    src: "/sky3.png"
+  }
+  maskOpacity = 0.2
   filterVal = 0
   duration = 300
 

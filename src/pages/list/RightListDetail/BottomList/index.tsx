@@ -35,8 +35,8 @@ const MyDivider: FunctionComponent<{ children?: string }> = ({ children = "" }) 
   sx={{
     borderColor: "#ffffff88",
     width: "80%",
-    margin: ".04rem auto",
-    fontSize: ".06rem",
+    margin: "0.1250rem auto",
+    fontSize: "0.1875rem",
     "&::before, &::after": {
       borderColor: "#ffffff88",
     }

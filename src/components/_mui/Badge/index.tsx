@@ -3,12 +3,12 @@ import { styled } from "@mui/material";
 
 const ArkBadge = styled((props: BadgeProps) => <Badge {...props} variant="dot" />)(() => ({
   ".MuiBadge-badge": {
-    top: ".04rem",
+    top: "0.1250rem",
     backgroundColor: "rgb(255, 104, 1)",
     borderRadius: "0",
-    width: ".12rem",
-    minWidth: ".12rem",
-    height: ".12rem",
+    width: "0.3750rem",
+    minWidth: "0.3750rem",
+    height: "0.3750rem",
     transform: "rotate(-45deg) translate(60%,-60%)",
     boxShadow: "0 0 3px 3px #000",
     "&:before": {
@@ -16,8 +16,8 @@ const ArkBadge = styled((props: BadgeProps) => <Badge {...props} variant="dot" /
       position: "absolute",
       top: 0,
       left: 0,
-      width: ".20rem",
-      height: ".20rem",
+      width: "0.6250rem",
+      height: "0.6250rem",
       border: "2px solid rgb(255, 104, 1)",
       transform: "translate(-28%,-28%)",
       animation: "blink 2.4s ease-in-out infinite"

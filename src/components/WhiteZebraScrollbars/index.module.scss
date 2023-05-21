@@ -7,22 +7,22 @@
 
 .white_zebra_scrollbar_track-vertical {
   position: absolute;
-  width: 0.1rem !important;
+  width: 0.3125rem !important;
   right: 0;
   height: 100%;
   background-image: linear-gradient(45deg, transparent, transparent 40%, hsla(0, 0%, 58%, .5) 0, hsla(0, 0%, 58%, .5) 60%, transparent 0, transparent);
   background-repeat: repeat;
-  background-size: .12rem .12rem;
+  background-size: 0.3750rem 0.3750rem;
 }
 
 .white_zebra_scrollbar_thumb-vertical {
   position: absolute;
   top: 0;
   right: 0;
-  width: 0.1rem;
+  width: 0.3125rem;
   background-image: linear-gradient(45deg, transparent, transparent 40%, #ccc 0, #ccc 60%, transparent 0, transparent);
   background-repeat: repeat;
-  background-size: .12rem .12rem;
+  background-size: 0.3750rem 0.3750rem;
   transform: none !important;
 }
 

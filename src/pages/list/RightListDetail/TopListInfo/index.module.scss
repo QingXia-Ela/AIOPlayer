@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding-top: .4rem;
+  padding-top: 1.2500rem;
   user-select: none;
 }
 
@@ -11,8 +11,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 10.0000rem;
+  height: 10.0000rem;
   box-shadow: 0 5px 10px 2px rgba(0, 0, 0, .37);
   transform-origin: center;
   opacity: .9;
@@ -54,31 +54,31 @@
 .right_info {
   font-family: "Microsoft YaHei";
   display: flex;
-  width: calc(100% - 3.4rem);
+  width: calc(100% - 10.6250rem);
   height: 100%;
-  padding-left: .6rem;
+  padding-left: 1.8750rem;
   flex-flow: column nowrap;
 
   .title {
-    font-size: .42rem;
+    font-size: 1.3125rem;
     font-weight: 700;
     opacity: .9;
-    margin-bottom: .1rem;
+    margin-bottom: 0.3125rem;
   }
 
   .author {
     font-family: "SourceHanSansCN-Normal";
-    font-size: .28rem;
+    font-size: 0.8750rem;
     opacity: .8;
-    margin-bottom: .5rem;
+    margin-bottom: 1.5625rem;
   }
 
   .intro {
-    font-size: .2rem;
+    font-size: 0.6250rem;
     overflow: scroll;
 
     .block {
-      margin-top: .1rem;
+      margin-top: 0.3125rem;
     }
   }
 }
