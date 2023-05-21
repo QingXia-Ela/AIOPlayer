@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Styles from './index.module.scss'
 import { ArkBadge } from '@rebuildMui/Badge';
 import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
+import DownloadPath from './DownloadPath';
 
 interface DownloadPageProps {
 
@@ -25,13 +26,8 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
 
   const [value, setValue] = useState(0);
 
-  const [audioSource, setAudioSource] = useState("全部")
 
   const [dialogOpen, setDialogOpen] = useState(false)
-
-  const handleChange = (event: SelectChangeEvent<unknown>) => {
-    // setAudioSource(event.target.value as number)
-  }
 
   return (
     <div className={Styles.download_page}>
@@ -49,9 +45,11 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
             已完成
           </ArkBadge>
         } />
-        <Button variant='text' color="inherit" sx={{ fontSize: '0.9375rem' }} onClick={() => setDialogOpen(true)}>音频来源：{audioSource}</Button>
-      </WhiteTabs>
 
+      </WhiteTabs>
+      <Stack justifyContent="space-between">
+        <DownloadPath />
+      </Stack>
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
         <DialogTitle>test</DialogTitle>
         <BlackMenuItem value="全部">全部</BlackMenuItem>
