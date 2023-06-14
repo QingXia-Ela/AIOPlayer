@@ -1,10 +1,11 @@
 import { WhiteTab, WhiteTabs } from '@rebuildMui/Tabs/WhiteTab';
-import { Badge, Button, Dialog, DialogTitle, SelectChangeEvent, Stack } from '@mui/material';
+import { Badge, Button, Dialog, DialogTitle, Stack, styled } from '@mui/material';
 import { useState } from 'react';
 import Styles from './index.module.scss'
 import { ArkBadge } from '@rebuildMui/Badge';
 import BlackMenuItem from '@rebuildMui/MenuItem/BlackMenuItem';
 import DownloadPath from './DownloadPath';
+import OperationButtonGroup from './OperationButtonGroup';
 
 interface DownloadPageProps {
 
@@ -22,10 +23,20 @@ const BadgeStyles = {
   }
 }
 
+const OperationButton = styled(Button)(({ theme }) => ({
+  height: '2rem',
+  padding: '0 1rem',
+}))
+
+const DownloadOperation = [
+  <OperationButton key="1" startIcon={<i className="iconfont icon-24gl-playCircle" />}>全部开始</OperationButton>,
+  <OperationButton key="2" startIcon={<i className="iconfont icon-24gl-pauseCircle" />}>全部暂停</OperationButton>,
+  <OperationButton key="3" startIcon={<i className="iconfont icon-24gl-gear" />}>下载设置</OperationButton>,
+]
+
 const DownloadPage: React.FC<DownloadPageProps> = () => {
 
   const [value, setValue] = useState(0);
-
 
   const [dialogOpen, setDialogOpen] = useState(false)
 
@@ -45,10 +56,10 @@ const DownloadPage: React.FC<DownloadPageProps> = () => {
             已完成
           </ArkBadge>
         } />
-
       </WhiteTabs>
-      <Stack justifyContent="space-between">
+      <Stack justifyContent="space-between" flexDirection="row" alignItems="center">
         <DownloadPath />
+        <OperationButtonGroup ButtonList={DownloadOperation} />
       </Stack>
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
         <DialogTitle>test</DialogTitle>

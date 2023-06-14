@@ -30,7 +30,7 @@ const MiddleOperation: FunctionComponent<MiddleOperationProps> = () => {
 
   return (
     <div className={Styles.middle_operation}>
-      <Stack spacing={2} direction="row" margin="0 auto">
+      <Stack spacing={2} direction="row" margin="0 auto" height="2.375rem">
         <div className={Styles.icon_wrapper} onClick={() => setPlayMode(playMode < 3 ? playMode + 1 : 1)}>
           <FlowUpChangeIcon
             IconMap={PlayModeIconMap}
